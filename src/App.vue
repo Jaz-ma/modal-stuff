@@ -5,10 +5,11 @@
   </h1>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
+  <Modal/>
 </template>
 
 <script>
-
+import Modal from './components/Modal.vue'
 export default {
   name: 'zApp',
   data(){
@@ -21,6 +22,9 @@ export default {
       console.log(this.$refs.name)
       this.$refs.name.focus()
     }
+  },
+  components:{
+    Modal,
   }
 }
 </script>
