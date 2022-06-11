@@ -1,15 +1,26 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <h1>I learn frameworks while using VIM because i hate myself</h1>
+  <h1>
+    {{title}}
+  </h1>
+  <input type="text" ref="name">
+  <button @click="handleClick">Click me</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'zApp',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      title:"fuck me sideways"
+    }
+  },
+  methods:{
+    handleClick(){
+      console.log(this.$refs.name)
+      this.$refs.name.focus()
+    }
   }
 }
 </script>
