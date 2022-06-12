@@ -1,5 +1,5 @@
 <template>
-    <div class="backdrop">
+    <div class="backdrop" @click="closeModal">
         <div class="modal" :class="{ sale: theme ==='sale'}">
             <p>
                 {{content}}
@@ -14,6 +14,11 @@ export default {
         content: String,
         theme: String,
         
+    },
+    methods:{
+        closeModal(){
+            this.$emit('close')
+        }
     }
 }
 </script>
@@ -32,5 +37,9 @@ export default {
     background: rgba(0,0,0,0.5);
     height: 100%;
     width: 100%;
+}
+.modal.sale{
+    background: red;
+    color: white;
 }
 </style>

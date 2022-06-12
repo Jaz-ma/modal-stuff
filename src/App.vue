@@ -5,7 +5,7 @@
   </h1>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
-  <Modal :content="content" theme="sale"/>
+  <Modal v-show="showModal" :content="content" theme="sale" @close="handleClick"/>
 </template>
 
 <script>
@@ -16,12 +16,14 @@ export default {
     return{
       title:"fuck me sideways",
       content:"whatever i want here",
+      showModal:false,
     }
   },
   methods:{
     handleClick(){
       console.log(this.$refs.name)
       this.$refs.name.focus()
+      this.showModal=!this.showModal
     }
   },
   components:{
