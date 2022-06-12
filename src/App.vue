@@ -5,18 +5,34 @@
   </h1>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
-  <Modal v-show="showModal" :content="content" theme="sale" @close="handleClick"/>
+  <Modal v-show="showModal"  theme="sale" @close="handleClick">
+    <h1>Yacine Says Hi!!!!</h1>
+    <template v-slot:links>
+      <a href="#">sing up here</a>
+      <br>
+      <a href="#">read more</a>
+    </template>
+  </Modal>
+  <button @click="toggleModal2">MOdal2</button>
+  <Modal v-show="showModal2" >
+    <h1>Hanane says hi</h1>
+    <template v-slot:btn>
+      <h2>Second Modal woohoo</h2>
+      <button @click="closeModal2">Close Modal</button>
+    </template>
+  </Modal>
 </template>
-
 <script>
 import Modal from './components/Modal.vue'
 export default {
   name: 'zApp',
   data(){
     return{
-      title:"fuck me sideways",
+      title:"Khalitha vue :)",
       content:"whatever i want here",
       showModal:false,
+      showModal2: false,
+
     }
   },
   methods:{
@@ -24,6 +40,12 @@ export default {
       console.log(this.$refs.name)
       this.$refs.name.focus()
       this.showModal=!this.showModal
+    },
+    closeModal2(){
+      this.showModal2= false
+    },
+    toggleModal2(){
+      this.showModal2=!this.showModal2
     }
   },
   components:{

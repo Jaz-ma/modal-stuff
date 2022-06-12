@@ -1,9 +1,13 @@
 <template>
     <div class="backdrop" @click.self="closeModal">
         <div class="modal" :class="{ sale: theme ==='sale'}">
-            <p>
-                {{content}}
-            </p>
+            <slot></slot>
+            <div>
+                <slot name="links"></slot>
+            </div>
+            <div>
+                <slot name="btn"></slot>
+            </div>
         </div>
     </div>
 </template>
@@ -11,7 +15,6 @@
 <script>
 export default {
     props:{
-        content: String,
         theme: String,
         
     },
