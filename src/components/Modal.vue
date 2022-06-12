@@ -1,11 +1,21 @@
 <template>
     <div class="backdrop">
-        <div class="modal">
-            <p>Modal Content</p>
+        <div class="modal" :class="{ sale: theme ==='sale'}">
+            <p>
+                {{content}}
+            </p>
         </div>
     </div>
 </template>
 
+<script>
+export default {
+    props:{
+        content: String,
+        theme: String,
+    }
+}
+</script>
 <style>
 .modal{
     width: 200px;

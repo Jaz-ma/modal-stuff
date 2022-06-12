@@ -5,7 +5,7 @@
   </h1>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
-  <Modal/>
+  <Modal :content="content" theme="sale"/>
 </template>
 
 <script>
@@ -14,7 +14,8 @@ export default {
   name: 'zApp',
   data(){
     return{
-      title:"fuck me sideways"
+      title:"fuck me sideways",
+      content:"whatever i want here",
     }
   },
   methods:{
