@@ -5,6 +5,7 @@
   </h1>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
+  <teleport to=".modals">
   <Modal v-show="showModal"  theme="sale" @close="handleClick">
     <h1>Yacine Says Hi!!!!</h1>
     <template v-slot:links>
@@ -13,7 +14,9 @@
       <a href="#">read more</a>
     </template>
   </Modal>
+  </teleport>
   <button @click="toggleModal2">MOdal2</button>
+    <teleport to=".modals">
   <Modal v-show="showModal2" >
     <h1>Hanane says hi</h1>
     <template v-slot:btn>
@@ -21,6 +24,7 @@
       <button @click="closeModal2">Close Modal</button>
     </template>
   </Modal>
+    </teleport>
 </template>
 <script>
 import Modal from './components/Modal.vue'
