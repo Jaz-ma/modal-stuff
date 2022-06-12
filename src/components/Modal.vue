@@ -13,7 +13,7 @@ export default {
     props:{
         content: String,
         theme: String,
-        sale: String
+        
     }
 }
 </script>
